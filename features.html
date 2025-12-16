@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - SPRAED</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['IBM Plex Mono', 'monospace'],
+                    },
+                    colors: {
+                        'background': '#ffffff',
+                        'foreground': '#000000',
+                        'muted': '#e5e5e5',
+                        'muted-foreground': '#666666',
+                    },
+                    borderRadius: {
+                        'none': '0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            border-color: #000000;
+        }
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #ffffff;
+            color: #000000;
+            letter-spacing: 0.05em;
+        }
+        .vintage-button {
+            border: 2px solid currentColor;
+            background: transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .vintage-button:hover {
+            background: currentColor;
+        }
+        .vintage-button.bg-black:hover {
+            color: #000000;
+            background: #ffffff;
+        }
+        .vintage-button.bg-white:hover {
+            color: #ffffff;
+            background: #000000;
+        }
+        .bg-gray-100 {
+            background-color: #e5e5e5;
+        }
+        .text-gray-600 {
+            color: #666666;
+        }
+    </style>
+    <script src="menu.js" defer></script>
+</head>
+<body class="bg-white text-black">
+    <!-- Header -->
+    <header class="border-b-2 border-black bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a id="main-logo" href="index.html" class="flex items-center space-x-2">
+                    <!-- Logo will be rendered by menu.js -->
+                </a>
+                <nav id="main-nav" class="hidden md:flex items-center space-x-8">
+                    <!-- Menu items will be rendered by menu.js -->
+                </nav>
+                <div class="md:hidden">
+                    <button class="p-2">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <div class="bg-white">
+            <!-- Hero Section -->
+            <section class="py-20 lg:py-32">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="mb-6 inline-block border-2 border-black px-4 py-2 bg-white">
+                            <div class="flex items-center">
+                                <svg class="h-3 w-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                <span class="uppercase tracking-widest text-xs font-bold">Revolutionary Features</span>
+                            </div>
+                        </div>
+                        <h1 class="font-mono font-bold text-4xl md:text-6xl lg:text-7xl text-balance mb-6 uppercase tracking-wide">
+                            Built for the <span class="bg-black text-white px-2">Future</span> of <span class="border-2 border-black px-2">Connectivity</span>
+                        </h1>
+                        <div class="border-2 border-black p-6 mb-8 bg-gray-100">
+                            <p class="text-lg text-black font-mono leading-relaxed max-w-2xl mx-auto">
+                                &gt; Discover the cutting-edge capabilities that make SPRAED the most advanced agentic operating fabric in the world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Features Grid -->
+            <section class="py-20 bg-gray-100 border-t-2 border-b-2 border-black">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Core Capabilities</h2>
+                        <div class="border-2 border-black p-4 bg-white inline-block">
+                            <p class="text-lg font-mono">&gt; Enterprise-grade features designed for scale</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="border-2 border-black bg-white p-6 hover:bg-black hover:text-white transition-all duration-300 group">
+                            <svg class="h-8 w-8 mb-4 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Zero-Trust Security</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                End-to-end encryption, multi-factor authentication, and continuous security monitoring across all connected devices.
+                            </p>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-6 hover:bg-black hover:text-white transition-all duration-300 group">
+                            <svg class="h-8 w-8 mb-4 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Real-Time Processing</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Sub-millisecond latency for critical operations with distributed edge computing and intelligent load balancing.
+                            </p>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-6 hover:bg-black hover:text-white transition-all duration-300 group">
+                            <svg class="h-8 w-8 mb-4 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"></path>
+                            </svg>
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Modular Architecture</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Plug-and-play components that scale from single devices to enterprise-wide deployments seamlessly.
+                            </p>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-6 hover:bg-black hover:text-white transition-all duration-300 group">
+                            <svg class="h-8 w-8 mb-4 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Developer-First APIs</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                RESTful and GraphQL APIs with comprehensive SDKs for Python, JavaScript, Go, and Rust.
+                            </p>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-6 hover:bg-black hover:text-white transition-all duration-300 group">
+                            <svg class="h-8 w-8 mb-4 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                            </svg>
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Intelligent Data Sync</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Automatic conflict resolution and data synchronization across distributed systems with eventual consistency.
+                            </p>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-6 hover:bg-black hover:text-white transition-all duration-300 group">
+                            <svg class="h-8 w-8 mb-4 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                            </svg>
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Multi-Cloud Ready</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Deploy across AWS, Azure, GCP, and on-premises infrastructure with unified management and monitoring.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section class="py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Technical Specifications</h2>
+                        <div class="border-2 border-black p-4 bg-gray-100 inline-block">
+                            <p class="text-lg font-mono">&gt; Built on cutting-edge technology stack</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                        <div class="border-2 border-black bg-white p-8">
+                            <h3 class="font-mono font-bold text-xl mb-6 uppercase tracking-wide border-b border-black pb-2">Performance Metrics</h3>
+                            <div class="space-y-4 font-mono text-sm">
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Response Time:</span>
+                                    <span class="font-bold">&lt; 1ms</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Throughput:</span>
+                                    <span class="font-bold">1M+ ops/sec</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Concurrent Connections:</span>
+                                    <span class="font-bold">100K+</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Uptime SLA:</span>
+                                    <span class="font-bold">99.99%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Data Consistency:</span>
+                                    <span class="font-bold">ACID Compliant</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-8">
+                            <h3 class="font-mono font-bold text-xl mb-6 uppercase tracking-wide border-b border-black pb-2">Supported Protocols</h3>
+                            <div class="space-y-4 font-mono text-sm">
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Communication:</span>
+                                    <span class="font-bold">WebRTC, WebSocket</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>IoT Protocols:</span>
+                                    <span class="font-bold">MQTT, CoAP, LoRaWAN</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Industrial:</span>
+                                    <span class="font-bold">Modbus, OPC-UA</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Security:</span>
+                                    <span class="font-bold">TLS 1.3, OAuth 2.0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Data Formats:</span>
+                                    <span class="font-bold">JSON, Protocol Buffers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-20 bg-black text-white border-t-2 border-black">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Ready to Experience These Features?</h2>
+                    <div class="border-2 border-white p-4 bg-black inline-block mb-8">
+                        <p class="text-xl font-mono">&gt; Start building with SPRAED's powerful feature set today</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="vintage-button bg-white text-black text-lg px-8 py-3 uppercase tracking-wide border-white hover:bg-black hover:text-white inline-flex items-center justify-center">
+                            Start Free Trial
+                            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                        <button class="vintage-button text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-black uppercase tracking-wide bg-transparent">
+                            View Documentation
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t-2 border-black bg-gray-100 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="h-6 w-6 border border-black bg-black flex items-center justify-center">
+                            <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <span class="font-mono font-bold text-lg tracking-wider">SPRAED</span>
+                    </a>
+                    <div class="border border-black p-2 bg-white">
+                        <p class="text-black text-xs font-mono leading-relaxed">
+                            Agentic Operating Fabric Software for People, Robots & Electronic Devices
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Product</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="features.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Features</a></li>
+                        <li><a href="platform.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Platform</a></li>
+                        <li><a href="pricing.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Pricing</a></li>
+                        <li><a href="docs.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Documentation</a></li>
+                        <li><a href="api-reference.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">API Reference</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Company</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="about.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">About</a></li>
+                        <li><a href="blog.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Blog</a></li>
+                        <li><a href="careers.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Careers</a></li>
+                        <li><a href="contact.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Legal</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="privacy.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Terms of Service</a></li>
+                        <li><a href="security.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t-2 border-black mt-8 pt-8 text-center">
+                <div class="border border-black p-2 bg-white inline-block">
+                    <p class="text-xs font-mono uppercase tracking-widest">© 2025 SPRAED. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

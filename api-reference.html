@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - SPRAED</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['IBM Plex Mono', 'monospace'],
+                    },
+                    colors: {
+                        'background': '#ffffff',
+                        'foreground': '#000000',
+                        'muted': '#e5e5e5',
+                        'muted-foreground': '#666666',
+                    },
+                    borderRadius: {
+                        'none': '0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            border-color: #000000;
+        }
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #ffffff;
+            color: #000000;
+            letter-spacing: 0.05em;
+        }
+        .vintage-button {
+            border: 2px solid currentColor;
+            background: transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .vintage-button:hover {
+            background: currentColor;
+        }
+        .vintage-button.bg-black:hover {
+            color: #000000;
+            background: #ffffff;
+        }
+        .vintage-button.bg-white:hover {
+            color: #ffffff;
+            background: #000000;
+        }
+        .bg-gray-100 {
+            background-color: #e5e5e5;
+        }
+        .text-gray-600 {
+            color: #666666;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+    <script src="menu.js" defer></script>
+</head>
+<body class="bg-white text-black">
+    <!-- Header -->
+    <header class="border-b-2 border-black bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a id="main-logo" href="index.html" class="flex items-center space-x-2">
+                    <!-- Logo will be rendered by menu.js -->
+                </a>
+                <nav id="main-nav" class="hidden md:flex items-center space-x-8">
+                    <!-- Menu items will be rendered by menu.js -->
+                </nav>
+                <div class="md:hidden">
+                    <button class="p-2">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <div class="bg-white">
+            <!-- Hero Section -->
+            <section class="py-20 lg:py-32">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="mb-6 inline-block border-2 border-black px-4 py-2 bg-white">
+                            <div class="flex items-center">
+                                <svg class="h-3 w-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                <span class="uppercase tracking-widest text-xs font-bold">API Reference</span>
+                            </div>
+                        </div>
+                        <h1 class="font-mono font-bold text-4xl md:text-6xl lg:text-7xl text-balance mb-6 uppercase tracking-wide">
+                            SPRAED <span class="bg-black text-white px-2">REST</span> API
+                        </h1>
+                        <div class="border-2 border-black p-6 mb-8 bg-gray-100">
+                            <p class="text-lg text-black font-mono leading-relaxed max-w-2xl mx-auto">
+                                &gt; Complete reference for SPRAED's RESTful API with authentication, endpoints, and examples.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Overview -->
+            <section class="py-20 bg-gray-100 border-t-2 border-b-2 border-black">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">API Overview</h2>
+                        <div class="border-2 border-black p-4 bg-white inline-block">
+                            <p class="text-lg font-mono">&gt; RESTful API with JSON responses</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Base URL</h3>
+                            <div class="border border-black p-3 bg-gray-100 mb-4">
+                                <code class="font-mono text-sm">https://api.spraed.com/v1</code>
+                            </div>
+                            <p class="font-mono text-sm leading-relaxed">
+                                All API requests should be made to this base URL with the appropriate endpoint path.
+                            </p>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Authentication</h3>
+                            <div class="border border-black p-3 bg-gray-100 mb-4">
+                                <code class="font-mono text-sm">Authorization: Bearer YOUR_API_KEY</code>
+                            </div>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Include your API key in the Authorization header for all requests.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Endpoints -->
+            <section class="py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">API Endpoints</h2>
+                        <div class="border-2 border-black p-4 bg-gray-100 inline-block">
+                            <p class="text-lg font-mono">&gt; Core endpoints for device and agent management</p>
+                        </div>
+                    </div>
+
+                    <div class="max-w-6xl mx-auto space-y-8">
+                        <!-- Devices Endpoints -->
+                        <div class="border-2 border-black bg-white">
+                            <div class="border-b border-black p-6 bg-gray-100">
+                                <div class="flex items-center">
+                                    <svg class="h-6 w-6 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                                    </svg>
+                                    <h3 class="font-mono font-bold text-2xl uppercase tracking-wide">Devices</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-6">
+                                <div class="border border-black">
+                                    <div class="border-b border-black p-4 bg-gray-100">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <span class="bg-green-600 text-white px-2 py-1 font-mono text-xs mr-3">GET</span>
+                                                <code class="font-mono text-sm">/devices</code>
+                                            </div>
+                                            <button class="vintage-button bg-transparent px-2 py-1">
+                                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="font-mono text-sm mb-4">List all connected devices</p>
+                                        <div class="border border-black p-3 bg-gray-100">
+                                            <pre class="font-mono text-xs overflow-x-auto">{
+  "devices": [
+    {
+      "id": "device-123",
+      "name": "Smart Thermostat",
+      "type": "thermostat",
+      "status": "online",
+      "last_seen": "2024-01-15T10:30:00Z"
+    }
+  ]
+}</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border border-black">
+                                    <div class="border-b border-black p-4 bg-gray-100">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <span class="bg-blue-600 text-white px-2 py-1 font-mono text-xs mr-3">POST</span>
+                                                <code class="font-mono text-sm">/devices</code>
+                                            </div>
+                                            <button class="vintage-button bg-transparent px-2 py-1">
+                                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="font-mono text-sm mb-4">Connect a new device</p>
+                                        <div class="border border-black p-3 bg-gray-100">
+                                            <pre class="font-mono text-xs overflow-x-auto">{
+  "name": "Smart Thermostat",
+  "type": "thermostat",
+  "protocol": "mqtt",
+  "config": {
+    "host": "device.local",
+    "port": 1883
+  }
+}</pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Agents Endpoints -->
+                        <div class="border-2 border-black bg-white">
+                            <div class="border-b border-black p-6 bg-gray-100">
+                                <div class="flex items-center">
+                                    <svg class="h-6 w-6 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    <h3 class="font-mono font-bold text-2xl uppercase tracking-wide">Agents</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-6">
+                                <div class="border border-black">
+                                    <div class="border-b border-black p-4 bg-gray-100">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <span class="bg-green-600 text-white px-2 py-1 font-mono text-xs mr-3">GET</span>
+                                                <code class="font-mono text-sm">/agents</code>
+                                            </div>
+                                            <button class="vintage-button bg-transparent px-2 py-1">
+                                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="font-mono text-sm mb-4">List all AI agents</p>
+                                        <div class="border border-black p-3 bg-gray-100">
+                                            <pre class="font-mono text-xs overflow-x-auto">{
+  "agents": [
+    {
+      "id": "agent-456",
+      "name": "Temperature Monitor",
+      "status": "active",
+      "devices": ["device-123"],
+      "created_at": "2024-01-15T09:00:00Z"
+    }
+  ]
+}</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border border-black">
+                                    <div class="border-b border-black p-4 bg-gray-100">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <span class="bg-blue-600 text-white px-2 py-1 font-mono text-xs mr-3">POST</span>
+                                                <code class="font-mono text-sm">/agents</code>
+                                            </div>
+                                            <button class="vintage-button bg-transparent px-2 py-1">
+                                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="font-mono text-sm mb-4">Create a new AI agent</p>
+                                        <div class="border border-black p-3 bg-gray-100">
+                                            <pre class="font-mono text-xs overflow-x-auto">{
+  "name": "Temperature Monitor",
+  "goal": "Maintain optimal temperature",
+  "devices": ["device-123"],
+  "config": {
+    "target_temp": 72,
+    "tolerance": 2
+  }
+}</pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Codes -->
+            <section class="py-20 bg-gray-100 border-t-2 border-b-2 border-black">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Error Codes</h2>
+                        <div class="border-2 border-black p-4 bg-white inline-block">
+                            <p class="text-lg font-mono">&gt; Standard HTTP status codes and error responses</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Common Errors</h3>
+                            <div class="space-y-3 font-mono text-sm">
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>400 Bad Request:</span>
+                                    <span>Invalid request format</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>401 Unauthorized:</span>
+                                    <span>Invalid API key</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>404 Not Found:</span>
+                                    <span>Resource not found</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>500 Server Error:</span>
+                                    <span>Internal server error</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Error Response Format</h3>
+                            <div class="border border-black p-3 bg-gray-100">
+                                <pre class="font-mono text-xs overflow-x-auto">{
+  "error": {
+    "code": "INVALID_REQUEST",
+    "message": "Missing required field: name",
+    "details": {
+      "field": "name",
+      "type": "required"
+    }
+  }
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-20 bg-black text-white border-t-2 border-black">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Ready to Integrate?</h2>
+                    <div class="border-2 border-white p-4 bg-black inline-block mb-8">
+                        <p class="text-xl font-mono">&gt; Get your API key and start building today</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="vintage-button bg-white text-black text-lg px-8 py-3 uppercase tracking-wide border-white hover:bg-black hover:text-white inline-flex items-center justify-center">
+                            Get API Key
+                            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                        <button class="vintage-button text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-black uppercase tracking-wide bg-transparent">
+                            View SDK Docs
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t-2 border-black bg-gray-100 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="h-6 w-6 border border-black bg-black flex items-center justify-center">
+                            <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <span class="font-mono font-bold text-lg tracking-wider">SPRAED</span>
+                    </a>
+                    <div class="border border-black p-2 bg-white">
+                        <p class="text-black text-xs font-mono leading-relaxed">
+                            Agentic Operating Fabric Software for People, Robots & Electronic Devices
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Product</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="features.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Features</a></li>
+                        <li><a href="platform.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Platform</a></li>
+                        <li><a href="pricing.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Pricing</a></li>
+                        <li><a href="docs.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Documentation</a></li>
+                        <li><a href="api-reference.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">API Reference</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Company</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="about.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">About</a></li>
+                        <li><a href="blog.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Blog</a></li>
+                        <li><a href="careers.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Careers</a></li>
+                        <li><a href="contact.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Legal</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="privacy.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Terms of Service</a></li>
+                        <li><a href="security.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t-2 border-black mt-8 pt-8 text-center">
+                <div class="border border-black p-2 bg-white inline-block">
+                    <p class="text-xs font-mono uppercase tracking-widest">© 2025 SPRAED. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

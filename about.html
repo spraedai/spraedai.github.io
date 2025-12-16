@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - SPRAED</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['IBM Plex Mono', 'monospace'],
+                    },
+                    colors: {
+                        'background': '#ffffff',
+                        'foreground': '#000000',
+                        'muted': '#e5e5e5',
+                        'muted-foreground': '#666666',
+                    },
+                    borderRadius: {
+                        'none': '0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            border-color: #000000;
+        }
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #ffffff;
+            color: #000000;
+            letter-spacing: 0.05em;
+        }
+        .vintage-button {
+            border: 2px solid currentColor;
+            background: transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .vintage-button:hover {
+            background: currentColor;
+        }
+        .vintage-button.bg-black:hover {
+            color: #000000;
+            background: #ffffff;
+        }
+        .vintage-button.bg-white:hover {
+            color: #ffffff;
+            background: #000000;
+        }
+        .bg-gray-100 {
+            background-color: #e5e5e5;
+        }
+        .text-gray-600 {
+            color: #666666;
+        }
+    </style>
+    <script src="menu.js" defer></script>
+</head>
+<body class="bg-white text-black">
+    <!-- Header -->
+    <header class="border-b-2 border-black bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a id="main-logo" href="index.html" class="flex items-center space-x-2">
+                    <!-- Logo will be rendered by menu.js -->
+                </a>
+                <nav id="main-nav" class="hidden md:flex items-center space-x-8">
+                    <!-- Menu items will be rendered by menu.js -->
+                </nav>
+                <div class="md:hidden">
+                    <button class="p-2">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <div class="bg-white">
+            <!-- Hero Section -->
+            <section class="py-20 lg:py-32">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="mb-6 inline-block border-2 border-black px-4 py-2 bg-white">
+                            <div class="flex items-center">
+                                <svg class="h-3 w-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                <span class="uppercase tracking-widest text-xs font-bold">About SPRAED</span>
+                            </div>
+                        </div>
+                        <h1 class="font-mono font-bold text-4xl md:text-6xl lg:text-7xl text-balance mb-6 uppercase tracking-wide">
+                            Building the <span class="bg-black text-white px-2">Future</span> of Connected Systems
+                        </h1>
+                        <div class="border-2 border-black p-6 mb-8 bg-gray-100">
+                            <p class="text-lg text-black font-mono leading-relaxed max-w-2xl mx-auto">
+                                &gt; A startup revolutionizing how humans, artificial intelligence, and electronic systems collaborate through our groundbreaking agentic operating fabric.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mission & Vision -->
+            <section class="py-20 bg-gray-100 border-t-2 border-b-2 border-black">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                        <div class="border-2 border-black bg-white p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="h-12 w-12 border-2 border-black bg-black flex items-center justify-center mr-4">
+                                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h2 class="font-mono font-bold text-2xl uppercase tracking-wide">Our Mission</h2>
+                            </div>
+                            <p class="font-mono text-sm leading-relaxed mb-4">
+                                To create seamless, intelligent connections between people, robots, and devices that enhance human capability while maintaining complete operational control.
+                            </p>
+                            <p class="font-mono text-sm leading-relaxed">
+                                We believe the future belongs to collaborative systems where artificial intelligence amplifies human intelligence rather than replacing it.
+                            </p>
+                        </div>
+
+                        <div class="border-2 border-black bg-white p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="h-12 w-12 border-2 border-black bg-black flex items-center justify-center mr-4">
+                                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                    </svg>
+                                </div>
+                                <h2 class="font-mono font-bold text-2xl uppercase tracking-wide">Our Vision</h2>
+                            </div>
+                            <p class="font-mono text-sm leading-relaxed mb-4">
+                                A world where every device, system, and AI agent works in perfect harmony to solve humanity's greatest challenges.
+                            </p>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Through our agentic operating fabric, we're building the foundation for the next generation of intelligent, interconnected systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Startup Journey -->
+            <section class="py-20 hidden">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Our Journey</h2>
+                        <div class="border-2 border-black p-4 bg-gray-100 inline-block">
+                            <p class="text-lg font-mono">&gt; From concept to revolutionary platform</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                        <div class="border-2 border-black bg-white p-6 text-center">
+                            <svg class="h-8 w-8 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <div class="font-mono font-bold text-xl mb-2">2023</div>
+                            <div class="font-mono text-sm uppercase tracking-wide">Company Founded</div>
+                            <p class="font-mono text-xs mt-2 leading-relaxed">Started with a vision to connect everything</p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6 text-center">
+                            <svg class="h-8 w-8 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <div class="font-mono font-bold text-xl mb-2">$5M</div>
+                            <div class="font-mono text-sm uppercase tracking-wide">Seed Funding</div>
+                            <p class="font-mono text-xs mt-2 leading-relaxed">Led by top-tier VCs believing in our mission</p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6 text-center">
+                            <svg class="h-8 w-8 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            <div class="font-mono font-bold text-xl mb-2">25+</div>
+                            <div class="font-mono text-sm uppercase tracking-wide">Team Members</div>
+                            <p class="font-mono text-xs mt-2 leading-relaxed">World-class engineers and researchers</p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6 text-center">
+                            <svg class="h-8 w-8 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div class="font-mono font-bold text-xl mb-2">3</div>
+                            <div class="font-mono text-sm uppercase tracking-wide">Global Offices</div>
+                            <p class="font-mono text-xs mt-2 leading-relaxed">San Francisco, London, Singapore</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Founding Team -->
+            <section class="py-20 bg-gray-100 border-t-2 border-b-2 border-black hidden">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Founding Team</h2>
+                        <div class="border-2 border-black p-4 bg-white inline-block">
+                            <p class="text-lg font-mono">&gt; Visionaries building the future of connected systems</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <div class="border-2 border-black bg-white p-6 text-center">
+                            <div class="h-24 w-24 border-2 border-black bg-gray-100 mx-auto mb-4 flex items-center justify-center">
+                                <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-mono font-bold mb-2 uppercase tracking-wide">Dr. Sarah Chen</h3>
+                            <p class="font-mono text-sm mb-2">Co-Founder & CEO</p>
+                            <p class="font-mono text-xs leading-relaxed">
+                                Former MIT AI Lab researcher with expertise in distributed systems and multi-agent coordination
+                            </p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6 text-center">
+                            <div class="h-24 w-24 border-2 border-black bg-gray-100 mx-auto mb-4 flex items-center justify-center">
+                                <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-mono font-bold mb-2 uppercase tracking-wide">Marcus Rodriguez</h3>
+                            <p class="font-mono text-sm mb-2">Co-Founder & CTO</p>
+                            <p class="font-mono text-xs leading-relaxed">
+                                Robotics engineer and former Tesla Autopilot team lead with deep hardware-software integration experience
+                            </p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6 text-center">
+                            <div class="h-24 w-24 border-2 border-black bg-gray-100 mx-auto mb-4 flex items-center justify-center">
+                                <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-mono font-bold mb-2 uppercase tracking-wide">Dr. Aisha Patel</h3>
+                            <p class="font-mono text-sm mb-2">Co-Founder & CSO</p>
+                            <p class="font-mono text-xs leading-relaxed">
+                                Quantum computing expert and former Google Research scientist specializing in large-scale system optimization
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values & Culture -->
+            <section class="py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Our Values</h2>
+                        <div class="border-2 border-black p-4 bg-gray-100 inline-block">
+                            <p class="text-lg font-mono">&gt; The principles that drive everything we do</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Innovation First</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                We push the boundaries of what's possible, constantly exploring new technologies and approaches to solve complex problems.
+                            </p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Human-Centric Design</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Technology should enhance human capabilities, not replace them. Every decision we make puts people first.
+                            </p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Radical Transparency</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                Open communication, honest feedback, and transparent processes create the foundation for breakthrough innovation.
+                            </p>
+                        </div>
+                        <div class="border-2 border-black bg-white p-6">
+                            <h3 class="font-mono font-bold mb-4 uppercase tracking-wide">Global Impact</h3>
+                            <p class="font-mono text-sm leading-relaxed">
+                                We're building technology that can solve problems at planetary scale, from climate change to resource optimization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-20 bg-black text-white border-t-2 border-black">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="font-mono font-bold text-3xl md:text-4xl text-balance mb-4 uppercase tracking-wide">Join the Revolution</h2>
+                    <div class="border-2 border-white p-4 bg-black inline-block mb-8">
+                        <p class="text-xl font-mono">&gt; Be part of the future of connected systems with SPRAED</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="vintage-button bg-white text-black text-lg px-8 py-3 uppercase tracking-wide border-white hover:bg-black hover:text-white inline-flex items-center justify-center">
+                            Get Started
+                            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                        <button class="vintage-button text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-black uppercase tracking-wide bg-transparent">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t-2 border-black bg-gray-100 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="h-6 w-6 border border-black bg-black flex items-center justify-center">
+                            <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <span class="font-mono font-bold text-lg tracking-wider">SPRAED</span>
+                    </a>
+                    <div class="border border-black p-2 bg-white">
+                        <p class="text-black text-xs font-mono leading-relaxed">
+                            Agentic Operating Fabric Software for People, Robots & Electronic Devices
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Product</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="features.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Features</a></li>
+                        <li><a href="platform.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Platform</a></li>
+                        <li><a href="pricing.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Pricing</a></li>
+                        <li><a href="docs.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Documentation</a></li>
+                        <li><a href="api-reference.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">API Reference</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Company</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="about.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">About</a></li>
+                        <li><a href="blog.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Blog</a></li>
+                        <li><a href="careers.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Careers</a></li>
+                        <li><a href="contact.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-mono font-bold mb-4 uppercase tracking-wide border-b border-black pb-2">Legal</h3>
+                    <ul class="space-y-2 text-sm font-mono">
+                        <li><a href="privacy.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Terms of Service</a></li>
+                        <li><a href="security.html" class="hover:bg-black hover:text-white px-1 transition-colors uppercase tracking-wide">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t-2 border-black mt-8 pt-8 text-center">
+                <div class="border border-black p-2 bg-white inline-block">
+                    <p class="text-xs font-mono uppercase tracking-widest">© 2025 SPRAED. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
